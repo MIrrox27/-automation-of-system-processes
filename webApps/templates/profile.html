@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+      body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background);
+  color: var(--text-color);
+  line-height: 1.6;
+} 
+
+            :root {
+          --primary-color: #725ac1;
+          --primary-light: #8d86c9;
+          --secondary-color: #00B894;
+          --text-color: #2D3436;
+          --text-light: #636E72;
+          --background: #f7f7f7;
+          --white: #FFFFFF;
+          --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          --transition: all 0.3s ease;
+        }
+
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        .profile-avatar {
+      width: 40px;
+      height: 40px;
+      text-decoration: none;
+      border-radius: 50%;
+      background-color: var(--primary-light);
+      
+      color: var(--white);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .body{
+      position: relative;
+      display: flex; /* Использует Flexbox для расположения дочерних элементов */
+      justify-content: center; /* Центрирует текст по горизонтали */
+      align-items: center; /* Центрирует текст по вертикали */
+      top: 1vb;
+    }
+    .profile-body{
+      position: relative;
+      display: flex; /* Использует Flexbox для расположения дочерних элементов */
+      justify-content: center; /* Центрирует текст по горизонтали */
+      align-items: center; /* Центрирует текст по вертикали */
+      top: 15vb;
+      width: 30vb;
+      height: 80vb;
+      background: #CAC4CE;
+      border-radius: 0px 0px 0px 0px;
+      padding: 15px 32px;
+      border-radius: 4px;
+    }
+
+    .profile-button {
+      width: 50px;
+      height: 50px;
+      font-weight: 700;
+      font-size: 23px;
+      border-radius: 12px;
+      background-color: var(--white);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-color);
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+
+
+    </style>
+</head>
+<body>
+<div class="body">
+  <div class="profile-body"></div>
+        <div class="profile-avatar"></div>
+  </div>
+</body>
+</html>

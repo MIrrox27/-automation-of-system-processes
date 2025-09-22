@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Компактная клавиатура</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+        
+        .keyboard {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            background-color: #d0d0d0;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+            max-width: 100%;
+            overflow-x: auto;
+        }
+        
+        .row {
+            display: flex;
+            gap: 4px;
+        }
+        
+        .key {
+            min-width: 40px;
+            height: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f7f7f7;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 12px;
+            color: #333;
+            position: relative;
+            user-select: none;
+            padding: 0 2px;
+            box-sizing: border-box;
+        }
+        
+        .key.system {
+            background-color: #725ac1;
+            color: white;
+        }
+        
+        .key.function {
+            background-color: #8d86c9;
+            color: white;
+        }
+        
+        .key.space {
+            width: 180px;
+        }
+        
+        .key.wide {
+            width: 60px;
+        }
+        
+        .key.x-wide {
+            width: 70px;
+        }
+        
+        .key.xx-wide {
+            width: 90px;
+        }
+        
+        .key.xxx-wide {
+            width: 150px;
+        }
+        
+        .key .secondary {
+            font-size: 8px;
+            color: #666;
+            position: absolute;
+            bottom: 2px;
+        }
+        
+        .key.system .secondary {
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="keyboard" id="keyboard">
+        <!-- Function Row -->
+        <div class="row">
+            <button class="key function" data-key="Escape" aria-label="Escape">
+                Esc
+            </button>
+            <button class="key function" data-key="F1" aria-label="F1">F1</button>
+            <button class="key function" data-key="F2" aria-label="F2">F2</button>
+            <button class="key function" data-key="F3" aria-label="F3">F3</button>
+            <button class="key function" data-key="F4" aria-label="F4">F4</button>
+            <button class="key function" data-key="F5" aria-label="F5">F5</button>
+            <button class="key function" data-key="F6" aria-label="F6">F6</button>
+            <button class="key function" data-key="F7" aria-label="F7">F7</button>
+            <button class="key function" data-key="F8" aria-label="F8">F8</button>
+            <button class="key function" data-key="F9" aria-label="F9">F9</button>
+            <button class="key function" data-key="F10" aria-label="F10">F10</button>
+            <button class="key function" data-key="F11" aria-label="F11">F11</button>
+            <button class="key function" data-key="F12" aria-label="F12">F12</button>
+        </div>
+        
+        <!-- First Row -->
+        <div class="row">
+            <button class="key" data-key="Backquote" aria-label="Backtick">
+                ~ <span class="secondary">`</span>
+            </button>
+            <button class="key" data-key="Digit1" aria-label="Digit 1">
+                ! <span class="secondary">1</span>
+            </button>
+            <button class="key" data-key="Digit2" aria-label="Digit 2">
+                @ <span class="secondary">2</span>
+            </button>
+            <button class="key" data-key="Digit3" aria-label="Digit 3">
+                # <span class="secondary">3</span>
+            </button>
+            <button class="key" data-key="Digit4" aria-label="Digit 4">
+                $ <span class="secondary">4</span>
+            </button>
+            <button class="key" data-key="Digit5" aria-label="Digit 5">
+                % <span class="secondary">5</span>
+            </button>
+            <button class="key" data-key="Digit6" aria-label="Digit 6">
+                ^ <span class="secondary">6</span>
+            </button>
+            <button class="key" data-key="Digit7" aria-label="Digit 7">
+                & <span class="secondary">7</span>
+            </button>
+            <button class="key" data-key="Digit8" aria-label="Digit 8">
+                * <span class="secondary">8</span>
+            </button>
+            <button class="key" data-key="Digit9" aria-label="Digit 9">
+                ( <span class="secondary">9</span>
+            </button>
+            <button class="key" data-key="Digit0" aria-label="Digit 0">
+                ) <span class="secondary">0</span>
+            </button>
+            <button class="key" data-key="Minus" aria-label="Minus">
+                _ <span class="secondary">-</span>
+            </button>
+            <button class="key" data-key="Equal" aria-label="Equal">
+                + <span class="secondary">=</span>
+            </button>
+            <button class="key system x-wide" data-key="Backspace" aria-label="Backspace">
+                Backspace
+            </button>
+        </div>
+        
+        <!-- Second Row -->
+        <div class="row">
+            <button class="key system wide" data-key="Tab" aria-label="Tab">
+                Tab
+            </button>
+            <button class="key" data-key="KeyQ" aria-label="Key Q">
+                Q <span class="secondary">Й</span>
+            </button>
+            <button class="key" data-key="KeyW" aria-label="Key W">
+                W <span class="secondary">Ц</span>
+            </button>
+            <button class="key" data-key="KeyE" aria-label="Key E">
+                E <span class="secondary">У</span>
+            </button>
+            <button class="key" data-key="KeyR" aria-label="Key R">
+                R <span class="secondary">К</span>
+            </button>
+            <button class="key" data-key="KeyT" aria-label="Key T">
+                T <span class="secondary">Е</span>
+            </button>
+            <button class="key" data-key="KeyY" aria-label="Key Y">
+                Y <span class="secondary">Н</span>
+            </button>
+            <button class="key" data-key="KeyU" aria-label="Key U">
+                U <span class="secondary">Г</span>
+            </button>
+            <button class="key" data-key="KeyI" aria-label="Key I">
+                I <span class="secondary">Ш</span>
+            </button>
+            <button class="key" data-key="KeyO" aria-label="Key O">
+                O <span class="secondary">Щ</span>
+            </button>
+            <button class="key" data-key="KeyP" aria-label="Key P">
+                P <span class="secondary">З</span>
+            </button>
+            <button class="key" data-key="BracketLeft" aria-label="Bracket Left">
+                { <span class="secondary">[</span>
+            </button>
+            <button class="key" data-key="BracketRight" aria-label="Bracket Right">
+                } <span class="secondary">]</span>
+            </button>
+            <button class="key" data-key="Backslash" aria-label="Backslash">
+                | <span class="secondary">\</span>
+            </button>
+        </div>
+        
+        <!-- Third Row -->
+        <div class="row">
+            <button class="key system wide" data-key="CapsLock" aria-label="Caps Lock">
+                Caps
+            </button>
+            <button class="key" data-key="KeyA" aria-label="Key A">
+                A <span class="secondary">Ф</span>
+            </button>
+            <button class="key" data-key="KeyS" aria-label="Key S">
+                S <span class="secondary">Ы</span>
+            </button>
+            <button class="key" data-key="KeyD" aria-label="Key D">
+                D <span class="secondary">В</span>
+            </button>
+            <button class="key" data-key="KeyF" aria-label="Key F">
+                F <span class="secondary">А</span>
+            </button>
+            <button class="key" data-key="KeyG" aria-label="Key G">
+                G <span class="secondary">П</span>
+            </button>
+            <button class="key" data-key="KeyH" aria-label="Key H">
+                H <span class="secondary">Р</span>
+            </button>
+            <button class="key" data-key="KeyJ" aria-label="Key J">
+                J <span class="secondary">О</span>
+            </button>
+            <button class="key" data-key="KeyK" aria-label="Key K">
+                K <span class="secondary">Л</span>
+            </button>
+            <button class="key" data-key="KeyL" aria-label="Key L">
+                L <span class="secondary">Д</span>
+            </button>
+            <button class="key" data-key="Semicolon" aria-label="Semicolon">
+                : <span class="secondary">;</span>
+            </button>
+            <button class="key" data-key="Quote" aria-label="Quote">
+                " <span class="secondary">'</span>
+            </button>
+            <button class="key system x-wide" data-key="Enter" aria-label="Enter">
+                Enter
+            </button>
+        </div>
+        
+        <!-- Fourth Row -->
+        <div class="row">
+            <button class="key system xx-wide" data-key="ShiftLeft" aria-label="Shift Left">
+                Shift
+            </button>
+            <button class="key" data-key="KeyZ" aria-label="Key Z">
+                Z <span class="secondary">Я</span>
+            </button>
+            <button class="key" data-key="KeyX" aria-label="Key X">
+                X <span class="secondary">Ч</span>
+            </button>
+            <button class="key" data-key="KeyC" aria-label="Key C">
+                C <span class="secondary">С</span>
+            </button>
+            <button class="key" data-key="KeyV" aria-label="Key V">
+                V <span class="secondary">М</span>
+            </button>
+            <button class="key" data-key="KeyB" aria-label="Key B">
+                B <span class="secondary">И</span>
+            </button>
+            <button class="key" data-key="KeyN" aria-label="Key N">
+                N <span class="secondary">Т</span>
+            </button>
+            <button class="key" data-key="KeyM" aria-label="Key M">
+                M <span class="secondary">Ь</span>
+            </button>
+            <button class="key" data-key="Comma" aria-label="Comma">
+                < <span class="secondary">,</span>
+            </button>
+            <button class="key" data-key="Period" aria-label="Period">
+                > <span class="secondary">.</span>
+            </button>
+            <button class="key" data-key="Slash" aria-label="Slash">
+                ? <span class="secondary">/</span>
+            </button>
+            <button class="key system xx-wide" data-key="ShiftRight" aria-label="Shift Right">
+                Shift
+            </button>
+        </div>
+        
+        <!-- Fifth Row -->
+        <div class="row">
+            <button class="key system" data-key="ControlLeft" aria-label="Control Left">
+                Ctrl
+            </button>
+            <button class="key system" data-key="MetaLeft" aria-label="Meta Left">
+                Win
+            </button>
+            <button class="key system" data-key="AltLeft" aria-label="Alt Left">
+                Alt
+            </button>
+            <button class="key space" data-key="Space" aria-label="Space">
+                Space
+            </button>
+            <button class="key system" data-key="AltRight" aria-label="Alt Right">
+                Alt
+            </button>
+            <button class="key system" data-key="MetaRight" aria-label="Meta Right">
+                Win
+            </button>
+            <button class="key system" data-key="ContextMenu" aria-label="Context Menu">
+                Menu
+            </button>
+            <button class="key system" data-key="ControlRight" aria-label="Control Right">
+                Ctrl
+            </button>
+        </div>
+    </div>
+    <script>
+
+    </script>
+</body>
+</html>

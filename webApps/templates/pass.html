@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <form method="post">
+        <div class="pass">
+            <div class="pass-input">
+                <input type="password" id="password" name="password" autocomplete="off" class="pass-input" required>
+            </div>
+            <div class="pass-btn-conteiner">
+                <button type="submit" class="pass-btn">перейти</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

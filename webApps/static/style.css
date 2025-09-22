@@ -1,0 +1,284 @@
+
+body {
+    background-color: #f0f0f0;
+    font-family: 'Inter', sans-serif;
+}
+
+.console {
+    width: 900px;
+    height: 800px;
+    background-color: #000;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 50px auto;
+} 
+
+.console-header {
+    background-color: #000000;
+    padding: 20px;
+    border-bottom: 1px solid #000000;
+}
+
+.console-title {
+    color: #fff; 
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.console-body {
+    padding: 20px;
+}
+
+.console-output {
+    color: #3cff00;
+    font-size: 16px;
+    white-space: pre-wrap; /* Позволяет переносить строки и сохраняет пробелы */
+    word-break: break-all; /* Переносит слова, если они слишком длинные */
+    overflow-wrap: break-word; /* Переносит длинные слова */
+    max-width: 100%; /* Устанавливает максимальную ширину, чтобы текст не выходил за пределы контейнера */
+}
+
+
+.console-input {
+    width: 90%;
+    height: 30px;
+    background-color: #000000;
+    color: #3cff00;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.console-btn {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    width: 10%;
+    height: 30px;
+}
+
+.console-btn:hover {
+    background-color: #555;
+}
+
+.pass{
+    background-color: #f0f0f0;
+    font-family:'Inter', sans-serif;
+
+}
+.pass-btn-conteiner {
+    display: flex; /* Использует Flexbox для контейнера */
+    justify-content: center; /* Центрирует содержимое по горизонтали */
+    align-items: center; /* Центрирует содержимое по вертикали (если нужно) */
+    height: 100vh; /* Устанавливает высоту контейнера на 100% высоты видимой области */
+}
+
+.pass-btn {
+    background-color: #8070c5;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: flex; /* Использует Flexbox для расположения дочерних элементов */
+    justify-content: center; /* Центрирует текст по горизонтали */
+    align-items: center; /* Центрирует текст по вертикали */
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.pass-input {
+    position: relative;
+    top: 23vh;
+    display: flex; /* Использует Flexbox для расположения дочерних элементов */
+    justify-content: center; /* Центрирует текст по горизонтали */
+    align-items: center; /* Центрирует текст по вертикали */
+    padding: 15px 32px;
+    border-radius: 4px;
+    
+}
+
+.pass-btn:hover {
+    background-color: #725ac1; /* Устанавливает более темный фиолетовый цвет фона для кнопки при наведении */
+}
+
+.home{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.home-upper-section {
+    background-color: #7104ca;
+
+}
+
+
+
+:root {
+  --primary-color: #725ac1;
+  --primary-light: #8d86c9;
+  --secondary-color: #00B894;
+  --text-color: #2D3436;
+  --text-light: #636E72;
+  --background: #f7f7f7;
+  --white: #FFFFFF;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  grid-template-rows: 70px 1fr;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  grid-column: 2;
+  grid-row: 1;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  z-index: 10;
+}
+
+.welcome-text h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  text-decoration: none;
+  border-radius: 50%;
+  background-color: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.user-avatar:hover {
+  transform: scale(1.05);
+}
+
+/* Sidebar */
+.sidebar {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  background: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.nav-button {
+  width: 50px;
+  height: 50px;
+  font-weight: 700;
+  font-size: 23px;
+  border-radius: 12px;
+  background-color: var(--white);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+}
+
+.nav-button:hover {
+  background-color: var(--primary-light);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+.nav-button i {
+  font-size: 1.2rem;
+}
+
+/* Main Content */
+.main-content {
+  grid-column: 2;
+  grid-row: 2;
+  padding: 30px;
+  background-color: var(--background);
+}
+
+.card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+
+.card h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+doc{
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+.doc-btn {
+    background-color: #725ac1;
+    color: #fff;
+    top: 10vb;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 12px;  
+    font-size: 26px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+    text-decoration: none;
+}
+
+.text-doc{
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+ .pad-doc{
+  padding: 15px;
+ }
