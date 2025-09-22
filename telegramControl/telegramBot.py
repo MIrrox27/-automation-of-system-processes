@@ -14,8 +14,8 @@ parametrs = {
     'state': "228666"
 }
 finalIPofServer = int(input("Введите последнюю цифру ip сервера: "))
-server = f"http://192.168.0.{finalIPofServer}/light"
-token = "7180817009:AAG5ICI6TUtHH_4ejxN0RFIrnqGclZdE4zU"
+server = f"http://192.168.0.{finalIPofServer}/light" #замените на ваш ip
+token = "ваш токен"
 requets = HTTPService(server, parametrs=parametrs)
 
 def main():
